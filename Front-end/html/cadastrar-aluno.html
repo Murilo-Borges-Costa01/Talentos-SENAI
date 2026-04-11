@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Cadastrar Aluno - Banco de Talentos SENAI</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/cadastrar-aluno.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Crect fill='%23ff7a00' width='200' height='60' rx='4'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='32' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3ESENAI%3C/text%3E%3C/svg%3E" alt="SENAI">
+      <span>Banco de Talentos</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="criar-vaga.html">Vagas</a></li>
+      <li><a href="relatorios.html">Relatórios</a></li>
+      <li><a href="#">Configurações</a></li>
+    </ul>
+    <div class="user-menu">
+      <span>👤 Pedagogo</span>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <div class="page-header">
+    <h1>Banco de Talentos SENAI</h1>
+    <p>Cadastrar Aluno</p>
+  </div>
+
+  <!-- Container Principal -->
+  <div class="container">
+    <div class="form-card">
+      <h2 style="color: #003d99; margin-bottom: 2rem;">Cadastrar Aluno</h2>
+      
+      <form id="formCadastroAluno">
+        <!-- Nome Completo -->
+        <div class="form-group">
+          <label for="nomeCompleto">
+            Nome Completo: <span class="required">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="nomeCompleto" 
+            name="nomeCompleto" 
+            placeholder="Digite o nome completo"
+            required
+          >
+        </div>
+
+        <!-- E-mail -->
+        <div class="form-group">
+          <label for="email">
+            E-mail: <span class="required">*</span>
+          </label>
+          <input 
+            type="email" 
+            id="email" 
+            name="email" 
+            placeholder="Digite o e-mail"
+            required
+          >
+        </div>
+
+        <!-- Contato -->
+        <div class="form-group">
+          <label for="contato">
+            Contato (Telefone/WhatsApp):
+          </label>
+          <input 
+            type="tel" 
+            id="contato" 
+            name="contato" 
+            placeholder="(XX) XXXXX-XXXX"
+          >
+        </div>
+
+        <!-- Curso e Ano -->
+        <div class="form-row">
+          <div class="form-group">
+            <label for="curso">
+              Curso Realizado: <span class="required">*</span>
+            </label>
+            <select id="curso" name="curso" required>
+              <option value="">Selecione o curso...</option>
+              <option value="desenvolvimento-sistemas">Desenvolvimento de Sistemas</option>
+              <option value="eletrotecnica">Eletrotécnica</option>
+              <option value="mecanica">Mecânica</option>
+              <option value="administracao">Administração</option>
+              <option value="recursos-humanos">Recursos Humanos</option>
+              <option value="logistica">Logística</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label for="anoConclusao">
+              Ano de Conclusão: <span class="required">*</span>
+            </label>
+            <input 
+              type="text" 
+              id="anoConclusao" 
+              name="anoConclusao" 
+              placeholder="YYYY"
+              required
+            >
+          </div>
+        </div>
+
+        <!-- Turma -->
+        <div class="form-group">
+          <label for="turma">
+            Turma:
+          </label>
+          <input 
+            type="text" 
+            id="turma" 
+            name="turma" 
+            placeholder="Digite a turma"
+          >
+        </div>
+
+        <!-- Descrição -->
+        <div class="form-group char-count">
+          <label for="descricao">
+            Descrição (resumo profissional):
+          </label>
+          <textarea 
+            id="descricao" 
+            name="descricao" 
+            placeholder="Descreva sua experiência profissional..."
+            maxlength="500"
+          ></textarea>
+          <div class="char-count-display">
+            <span id="charCount">0</span>/500
+          </div>
+        </div>
+
+        <!-- Botões -->
+        <div class="form-buttons">
+          <button type="submit" class="btn btn-primary">Cadastrar Aluno</button>
+          <button type="reset" class="btn btn-secondary">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Contador de caracteres
+    const descricao = document.getElementById('descricao');
+    const charCount = document.getElementById('charCount');
+
+    descricao.addEventListener('input', function() {
+      charCount.textContent = this.value.length;
+    });
+
+    // Submissão do formulário
+    document.getElementById('formCadastroAluno').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Aluno cadastrado com sucesso!');
+      // Aqui você faria a requisição para o backend
+    });
+  </script>
+</body>
+</html>

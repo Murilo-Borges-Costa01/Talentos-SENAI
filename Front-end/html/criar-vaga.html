@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar Nova Vaga - Banco de Talentos SENAI</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/criar-vaga.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Crect fill='%23ff7a00' width='200' height='60' rx='4'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='32' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3ESENAI%3C/text%3E%3C/svg%3E" alt="SENAI">
+      <span>Banco de Talentos</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="criar-vaga.html">Vagas</a></li>
+      <li><a href="relatorios.html">Relatórios</a></li>
+      <li><a href="#">Configurações</a></li>
+    </ul>
+    <div class="user-menu">
+      <span>👤 Pedagogo</span>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <div class="page-header">
+    <h1>Banco de Talentos SENAI</h1>
+    <p>Criar Nova Vaga</p>
+  </div>
+
+  <!-- Container Principal -->
+  <div class="container">
+    <div class="form-card">
+      <h2 style="color: #003d99; margin-bottom: 2rem;">Criar Nova Vaga</h2>
+      
+      <form id="formCriarVaga">
+        <!-- Título da Vaga -->
+        <div class="form-group">
+          <label for="titulVaga">
+            Título da Vaga: <span class="required">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="titulVaga" 
+            name="titulVaga" 
+            placeholder="Digite o título da vaga"
+            required
+          >
+        </div>
+
+        <!-- Descrição -->
+        <div class="form-group char-count">
+          <label for="descricaoVaga">
+            Descrição: <span class="required">*</span>
+          </label>
+          <textarea 
+            id="descricaoVaga" 
+            name="descricaoVaga" 
+            placeholder="Descreva detalhes da vaga..."
+            maxlength="1000"
+            required
+          ></textarea>
+          <div class="char-count-display">
+            <span id="charCountDescricao">0</span>/1000
+          </div>
+        </div>
+
+        <!-- Empresa -->
+        <div class="form-group">
+          <label for="empresa">
+            Empresa: <span class="required">*</span>
+          </label>
+          <input 
+            type="text" 
+            id="empresa" 
+            name="empresa" 
+            placeholder="Digite o nome da empresa"
+            required
+          >
+        </div>
+
+        <!-- Data de Expiração -->
+        <div class="form-group">
+          <label for="dataExpiracao">
+            Data de Expiração:
+          </label>
+          <input 
+            type="date" 
+            id="dataExpiracao" 
+            name="dataExpiracao"
+          >
+        </div>
+
+        <!-- Requisitos -->
+        <div class="form-group char-count">
+          <label for="requisitos">
+            Requisitos (filtros do candidato): <span class="required">*</span>
+          </label>
+          <textarea 
+            id="requisitos" 
+            name="requisitos" 
+            placeholder="Descreva os requisitos e habilidades necessárias..."
+            maxlength="1000"
+            required
+          ></textarea>
+          <div class="char-count-display">
+            <span id="charCountRequisitos">0</span>/1000
+          </div>
+        </div>
+
+        <!-- Botões -->
+        <div class="form-buttons">
+          <button type="submit" class="btn btn-primary">Criar Vaga</button>
+          <button type="reset" class="btn btn-secondary">Cancelar</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    // Contador de caracteres - Descrição
+    const descricaoVaga = document.getElementById('descricaoVaga');
+    const charCountDescricao = document.getElementById('charCountDescricao');
+
+    descricaoVaga.addEventListener('input', function() {
+      charCountDescricao.textContent = this.value.length;
+    });
+
+    // Contador de caracteres - Requisitos
+    const requisitos = document.getElementById('requisitos');
+    const charCountRequisitos = document.getElementById('charCountRequisitos');
+
+    requisitos.addEventListener('input', function() {
+      charCountRequisitos.textContent = this.value.length;
+    });
+
+    // Submissão do formulário
+    document.getElementById('formCriarVaga').addEventListener('submit', function(e) {
+      e.preventDefault();
+      alert('Vaga criada com sucesso!');
+      // Aqui você faria a requisição para o backend
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Relatórios - Banco de Talentos SENAI</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/relatorios.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Crect fill='%23ff7a00' width='200' height='60' rx='4'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='32' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3ESENAI%3C/text%3E%3C/svg%3E" alt="SENAI">
+      <span>Banco de Talentos</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="criar-vaga.html">Vagas</a></li>
+      <li><a href="relatorios.html">Relatórios</a></li>
+      <li><a href="#">Configurações</a></li>
+    </ul>
+    <div class="user-menu">
+      <span>👤 Pedagogo</span>
+    </div>
+  </nav>
+
+  <!-- Container Principal -->
+  <div class="container">
+    <!-- Header Relatórios -->
+    <div class="filters-section" style="margin-bottom: 2rem;">
+      <div class="filters-header">
+        <h2>📊 Relatórios</h2>
+        <div style="display: flex; gap: 1rem;">
+          <button class="btn btn-secondary" style="background-color: #ddd; color: #333;">🔄 Limpar Filtros</button>
+          <button class="btn btn-primary">⬇️ Gerar Relatório</button>
+        </div>
+      </div>
+      <p style="color: #666; margin-bottom: 1.5rem;">Gere e visualize relatórios dos alunos do Banco de Talentos.</p>
+
+      <!-- Filtros -->
+      <div class="filters-grid">
+        <select id="filterTurma">
+          <option value="">Todas as turmas</option>
+          <option value="2021-1">DS-2021-1</option>
+          <option value="2021-2">DS-2021-2</option>
+          <option value="2022-1">ET-2022-1</option>
+          <option value="2023-1">AD-2023-1</option>
+        </select>
+
+        <select id="filterVaga">
+          <option value="">Todas as vagas</option>
+          <option value="dev-junior">Dev Junior</option>
+          <option value="eletricista">Eletricista Predial</option>
+          <option value="mecanico">Mecânico de Precisão</option>
+          <option value="admin">Administrativo</option>
+        </select>
+
+        <select id="filterCurso">
+          <option value="">Todos os cursos</option>
+          <option value="desenvolvimento-sistemas">Desenvolvimento de Sistemas</option>
+          <option value="eletrotecnica">Eletrotécnica</option>
+          <option value="mecanica">Mecânica</option>
+          <option value="administracao">Administração</option>
+          <option value="recursos-humanos">Recursos Humanos</option>
+          <option value="logistica">Logística</option>
+        </select>
+
+        <select id="filterAno">
+          <option value="">Todos os anos</option>
+          <option value="2023">2023</option>
+          <option value="2024">2024</option>
+          <option value="2025">2025</option>
+          <option value="2026">2026</option>
+        </select>
+
+        <select id="filterTipoRelatorio">
+          <option value="">Todos os alunos</option>
+          <option value="candidatos">Candidatos</option>
+          <option value="compativeis">Compatíveis</option>
+          <option value="nao-candidatos">Não Candidatos</option>
+        </select>
+
+        <input 
+          type="text" 
+          id="searchKeyword" 
+          placeholder="Buscar por nome, e-mail..."
+        >
+      </div>
+    </div>
+
+    <!-- Cards de Estatísticas -->
+    <div class="stats-grid">
+      <div class="stat-card">
+        <div class="stat-icon blue">👥</div>
+        <div class="stat-content">
+          <h3>Total de Alunos</h3>
+          <div class="stat-value">1.256</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon green">✅</div>
+        <div class="stat-content">
+          <h3>Candidatos</h3>
+          <div class="stat-value">682</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon orange">📦</div>
+        <div class="stat-content">
+          <h3>Compatíveis</h3>
+          <div class="stat-value">512</div>
+        </div>
+      </div>
+
+      <div class="stat-card">
+        <div class="stat-icon purple">📅</div>
+        <div class="stat-content">
+          <h3>Vagas ativas</h3>
+          <div class="stat-value">87</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tabela de Resultados -->
+    <div class="table-section">
+      <div class="table-header">
+        <h3>Resultado do Relatório</h3>
+      </div>
+
+      <div style="overflow-x: auto;">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome do Aluno</th>
+              <th>E-mail</th>
+              <th>Contato</th>
+              <th>Curso</th>
+              <th>Turma</th>
+              <th>Ano de Conclusão</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Ana Clara Souza</td>
+              <td>ana.souza@email.com</td>
+              <td><a href="https://wa.me/5511998765432" style="color: #25d366; text-decoration: none;">📱 (11) 99876-5432</a></td>
+              <td>Desenvolvimento de Sistemas</td>
+              <td>DS-2021-3</td>
+              <td>2023</td>
+              <td><span class="badge badge-success">CANDIDATO</span></td>
+            </tr>
+
+            <tr>
+              <td>Carlos Eduardo Lima</td>
+              <td>carlos.lima@email.com</td>
+              <td><a href="https://wa.me/5511987654321" style="color: #25d366; text-decoration: none;">📱 (11) 98765-4321</a></td>
+              <td>Eletrotécnica</td>
+              <td>ET-2021-2</td>
+              <td>2023</td>
+              <td><span class="badge badge-info">COMPATÍVEL</span></td>
+            </tr>
+
+            <tr>
+              <td>Beatriz Martins</td>
+              <td>beatriz.martins@email.com</td>
+              <td><a href="https://wa.me/5511976543210" style="color: #25d366; text-decoration: none;">📱 (11) 97654-3210</a></td>
+              <td>Administração</td>
+              <td>AD-2022-1</td>
+              <td>2024</td>
+              <td><span class="badge badge-success">CANDIDATO</span></td>
+            </tr>
+
+            <tr>
+              <td>Diego Fernandes</td>
+              <td>diego.fernandes@email.com</td>
+              <td><a href="https://wa.me/5511965432109" style="color: #25d366; text-decoration: none;">📱 (11) 96543-2109</a></td>
+              <td>Mecatrônica</td>
+              <td>MT-2021-1</td>
+              <td>2023</td>
+              <td><span class="badge badge-danger">NÃO CANDIDATO</span></td>
+            </tr>
+
+            <tr>
+              <td>Fernanda Oliveira</td>
+              <td>fernanda.oliveira@email.com</td>
+              <td><a href="https://wa.me/5511954321098" style="color: #25d366; text-decoration: none;">📱 (11) 95432-1098</a></td>
+              <td>Logística</td>
+              <td>LG-2022-2</td>
+              <td>2024</td>
+              <td><span class="badge badge-info">COMPATÍVEL</span></td>
+            </tr>
+
+            <tr>
+              <td>Gabriel Xavier</td>
+              <td>gabriel.xavier@email.com</td>
+              <td><a href="https://wa.me/5511943210987" style="color: #25d366; text-decoration: none;">📱 (11) 94321-0987</a></td>
+              <td>Desenvolvimento de Sistemas</td>
+              <td>DS-2021-3</td>
+              <td>2023</td>
+              <td><span class="badge badge-success">CANDIDATO</span></td>
+            </tr>
+
+            <tr>
+              <td>Juliana Rocha</td>
+              <td>juliana.rocha@email.com</td>
+              <td><a href="https://wa.me/5511932109876" style="color: #25d366; text-decoration: none;">📱 (11) 93210-9876</a></td>
+              <td>Recursos Humanos</td>
+              <td>RH-2022-1</td>
+              <td>2024</td>
+              <td><span class="badge badge-danger">NÃO CANDIDATO</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Paginação -->
+      <div class="pagination">
+        <span>Mostrando 1 a 7 de 1.256 resultados</span>
+        <a href="#">⬅️ Anterior</a>
+        <span class="active">1</span>
+        <a href="#">2</a>
+        <a href="#">3</a>
+        <a href="#">4</a>
+        <a href="#">5</a>
+        <span>...</span>
+        <a href="#">180</a>
+        <a href="#">Próximo ➡️</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    // Evento dos botões de filtro
+    document.querySelector('.btn-secondary').addEventListener('click', function() {
+      document.getElementById('filterTurma').value = '';
+      document.getElementById('filterVaga').value = '';
+      document.getElementById('filterCurso').value = '';
+      document.getElementById('filterAno').value = '';
+      document.getElementById('filterTipoRelatorio').value = '';
+      document.getElementById('searchKeyword').value = '';
+      alert('Filtros limpos!');
+    });
+
+    document.querySelector('.btn-primary').addEventListener('click', function() {
+      alert('Gerando relatório com os filtros aplicados...');
+      // Aqui você faria a requisição para o backend
+    });
+
+    // Busca por palavra-chave
+    document.getElementById('searchKeyword').addEventListener('input', function(e) {
+      console.log('Buscando por:', e.target.value);
+    });
+  </script>
+</body>
+</html>

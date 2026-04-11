@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard - Banco de Talentos SENAI</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+  <!-- Container Principal -->
+  <div class="dashboard-wrapper">
+    <!-- Sidebar -->
+    <aside class="sidebar">
+      <div class="sidebar-header">
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 60'%3E%3Crect fill='%23ff7a00' width='200' height='60' rx='4'/%3E%3Ctext x='50%25' y='50%25' font-family='Arial' font-size='32' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3ESENAI%3C/text%3E%3C/svg%3E" alt="SENAI">
+        <h2>Banco de Talentos<br>SENAI</h2>
+      </div>
+
+      <nav class="sidebar-nav">
+        <a href="#" class="nav-item">
+          <span>🏠</span> Dashboard
+        </a>
+        <a href="cadastrar-aluno.html" class="nav-item">
+          <span>👥</span> Alunos
+        </a>
+        <a href="criar-vaga.html" class="nav-item">
+          <span>💼</span> Vagas
+        </a>
+        <a href="#" class="nav-item">
+          <span>✋</span> Candidaturas
+        </a>
+        <a href="relatorios.html" class="nav-item">
+          <span>📊</span> Relatórios
+        </a>
+      </nav>
+
+      <a href="login.html" class="nav-item logout">
+        <span>🚪</span> Sair
+      </a>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+      <!-- Top Bar -->
+      <div class="top-bar">
+        <div class="search-box">
+          <input type="text" placeholder="Buscar no sistema..." class="search-input">
+          <span class="search-icon">🔍</span>
+        </div>
+        
+        <div class="top-bar-right">
+          <div class="notification">
+            <span class="notification-icon">🔔</span>
+            <span class="notification-badge">3</span>
+          </div>
+          <div class="user-profile">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='50' fill='%230052cc'/%3E%3Ctext x='50%25' y='60%25' font-family='Arial' font-size='40' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'%3EP%3C/text%3E%3C/svg%3E" alt="Perfil" class="user-avatar">
+            <div class="user-dropdown">
+              <span>Pedagogo(a)</span>
+              <small>▼</small>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Content -->
+      <div class="dashboard-content">
+        <!-- User Profile Card -->
+        <div class="profile-card">
+          <div class="profile-avatar-large">
+            <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 200 200'>
+              <defs>
+                <linearGradient id='bg' x1='0%' y1='0%' x2='100%' y2='100%'>
+                  <stop offset='0%' style='stop-color:#6ba3f5;stop-opacity:1' />
+                  <stop offset='100%' style='stop-color:#0052cc;stop-opacity:1' />
+                </linearGradient>
+              </defs>
+              <circle cx='100' cy='100' r='100' fill='url(#bg)'/>
+              <text x='50%' y='60%' font-family='Arial' font-size='80' font-weight='bold' fill='white' text-anchor='middle' dominant-baseline='middle'>P</text>
+            </svg>
+          </div>
+          <h2>Pedagogo Responsável</h2>
+          <p class="badge-role">PEDAGOGO</p>
+
+          <div class="profile-info">
+            <div class="info-item">
+              <span class="info-icon">✉️</span>
+              <span>pedagogo@senai.br</span>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">📱</span>
+              <span>(11) 98765-4321</span>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">📅</span>
+              <span>Membro desde Janeiro de 2024</span>
+            </div>
+            <div class="info-item">
+              <span class="info-icon">📍</span>
+              <span>SENAI - São Paulo</span>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" style="width: 100%; margin-top: 1rem;">
+            ✏️ Editar Perfil
+          </button>
+        </div>
+
+        <!-- Stats & Recent Activity -->
+        <div class="main-grid">
+          <!-- Statistics -->
+          <div class="stats-section">
+            <div class="stats-grid">
+              <div class="stat-card">
+                <div class="stat-icon blue">👥</div>
+                <div class="stat-content">
+                  <h3>Alunos cadastrados</h3>
+                  <div class="stat-value">1.256</div>
+                  <small style="color: #27ae60;">↑ 12,5% este mês</small>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon orange">💼</div>
+                <div class="stat-content">
+                  <h3>Vagas criadas</h3>
+                  <div class="stat-value">87</div>
+                  <small style="color: #27ae60;">↑ 8,3% este mês</small>
+                </div>
+              </div>
+
+              <div class="stat-card">
+                <div class="stat-icon green">✅</div>
+                <div class="stat-content">
+                  <h3>Candidaturas analisadas</h3>
+                  <div class="stat-value">682</div>
+                  <small style="color: #27ae60;">↑ 15,7% este mês</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activities -->
+          <div class="activities-section">
+            <div class="activities-header">
+              <h3>⏱️ Atividades recentes</h3>
+              <a href="relatorios.html" class="link-view-all">Ver todas ></a>
+            </div>
+
+            <div class="activities-list">
+              <div class="activity-item">
+                <div class="activity-icon green">➕</div>
+                <div class="activity-content">
+                  <p class="activity-title">Você cadastrou um novo aluno</p>
+                  <small class="activity-desc">Ana Clara Souza foi adicionada ao sistema</small>
+                </div>
+                <span class="activity-time">Há 2 horas</span>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-icon orange">💼</div>
+                <div class="activity-content">
+                  <p class="activity-title">Você criou uma nova vaga</p>
+                  <small class="activity-desc">Desenvolvedor de Sistemas Jr. na TechSol</small>
+                </div>
+                <span class="activity-time">Há 5 horas</span>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-icon blue">📋</div>
+                <div class="activity-content">
+                  <p class="activity-title">Você visualizou um relatório</p>
+                  <small class="activity-desc">Relatório de candidatos da vaga Eletrônica</small>
+                </div>
+                <span class="activity-time">Ontem, 16:30</span>
+              </div>
+
+              <div class="activity-item">
+                <div class="activity-icon purple">👁️</div>
+                <div class="activity-content">
+                  <p class="activity-title">Você analisou candidaturas</p>
+                  <small class="activity-desc">5 candidaturas foram avaliadas na vaga de Logística</small>
+                </div>
+                <span class="activity-time">Ontem, 10:15</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+
+  <script>
+    // Interatividade simples
+    document.querySelector('.user-dropdown').addEventListener('click', function() {
+      alert('Abrindo menu de usuário...');
+    });
+
+    document.querySelector('.notification').addEventListener('click', function() {
+      alert('Você tem 3 novas notificações');
+    });
+  </script>
+</body>
+</html>

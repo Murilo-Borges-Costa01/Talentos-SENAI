@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizar Alunos - Banco de Talentos SENAI</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/visualizar-alunos.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="../FINDES SENAI BRANCO@300x (1).png" alt="SENAI">
+      <span>Banco de Talentos</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="visualizar-vagas.html">Vagas</a></li>
+      <li><a href="relatorios.html">Relatórios</a></li>
+      <li><a href="#">Configurações</a></li>
+    </ul>
+    <div class="user-menu">
+      <span>👤 Pedagogo</span>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <div class="page-header">
+    <h1>Banco de Talentos SENAI</h1>
+    <p>Visualizar Alunos</p>
+  </div>
+
+  <!-- Container Principal -->
+  <div class="container">
+    <!-- Filtros e Busca -->
+    <div class="search-section">
+      <div class="search-bar">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Buscar por nome, curso, turma..."
+          class="search-input"
+        >
+        <button class="btn btn-primary search-btn">Buscar</button>
+      </div>
+
+      <div class="filters-row">
+        <select id="filterCurso" class="filter-select">
+          <option value="">Curso</option>
+          <option value="desenvolvimento-sistemas">Desenvolvimento de Sistemas</option>
+          <option value="eletrotecnica">Eletrotécnica</option>
+          <option value="mecanica">Mecânica</option>
+          <option value="administracao">Administração</option>
+        </select>
+
+        <select id="filterTurma" class="filter-select">
+          <option value="">Turma</option>
+          <option value="A-101">A-101</option>
+          <option value="B-202">B-202</option>
+          <option value="C-303">C-303</option>
+          <option value="D-404">D-404</option>
+        </select>
+
+        <select id="filterAno" class="filter-select">
+          <option value="">Ano</option>
+          <option value="2019">2019</option>
+          <option value="2020">2020</option>
+          <option value="2021">2021</option>
+          <option value="2022">2022</option>
+        </select>
+
+        <button class="btn btn-secondary filter-btn">Filtrar</button>
+      </div>
+    </div>
+
+    <!-- Tabela de Alunos -->
+    <div class="table-section">
+      <h2>Lista de Alunos Cadastrados</h2>
+      
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <tr>
+              <th>Nome</th>
+              <th>E-mail</th>
+              <th>Curso</th>
+              <th>Turma</th>
+              <th>Ano</th>
+              <th>Ações</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td><a href="perfil-aluno.html" class="link-nome">Lucas Pereira</a></td>
+              <td>lucas.pereria@email.com</td>
+              <td>Técnico em Mecânica</td>
+              <td>A-101</td>
+              <td>2020</td>
+              <td class="acoes">
+                <a href="perfil-aluno.html" class="btn-icon edit" title="Editar">
+                  ✏️ Editar
+                </a>
+                <button class="btn-icon delete" title="Excluir" onclick="confirmDelete('Lucas Pereira')">
+                  ❌ Excluir
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><a href="perfil-aluno.html" class="link-nome">Mariana Souza</a></td>
+              <td>mariana.souza@email.com</td>
+              <td>Técnico em Eletotécnica</td>
+              <td>B-202</td>
+              <td>2019</td>
+              <td class="acoes">
+                <a href="perfil-aluno.html" class="btn-icon edit" title="Editar">
+                  ✏️ Editar
+                </a>
+                <button class="btn-icon delete" title="Excluir" onclick="confirmDelete('Mariana Souza')">
+                  ❌ Excluir
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><a href="perfil-aluno.html" class="link-nome">Pedro Lima</a></td>
+              <td>pedro.lima@email.com</td>
+              <td>Texnologia da Informática</td>
+              <td>C-303</td>
+              <td>2021</td>
+              <td class="acoes">
+                <a href="perfil-aluno.html" class="btn-icon edit" title="Editar">
+                  ✏️ Editar
+                </a>
+                <button class="btn-icon delete" title="Excluir" onclick="confirmDelete('Pedro Lima')">
+                  ❌ Excluir
+                </button>
+              </td>
+            </tr>
+
+            <tr>
+              <td><a href="perfil-aluno.html" class="link-nome">Ana Oliveira</a></td>
+              <td>ana.oliveira@email.com</td>
+              <td>Técnico em Mecânica</td>
+              <td>D-404</td>
+              <td>2020</td>
+              <td class="acoes">
+                <a href="perfil-aluno.html" class="btn-icon edit" title="Editar">
+                  ✏️ Editar
+                </a>
+                <button class="btn-icon delete" title="Excluir" onclick="confirmDelete('Ana Oliveira')">
+                  ❌ Excluir
+                </button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <!-- Paginação -->
+      <div class="pagination">
+        <span class="pagination-info">Mostrando 1 - 4 de 4 alunos</span>
+        <div class="pagination-links">
+          <span class="page-link disabled">Anterior</span>
+          <span class="page-link active">1</span>
+          <span class="page-link">2</span>
+          <span class="page-link">3</span>
+          <span class="page-link">Próximo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function confirmDelete(name) {
+      if (confirm(`Deseja excluir ${name}?`)) {
+        alert(`${name} foi excluído com sucesso!`);
+      }
+    }
+
+    document.querySelector('.filter-btn').addEventListener('click', function() {
+      alert('Filtros aplicados!');
+    });
+
+    document.querySelector('.search-btn').addEventListener('click', function() {
+      const searchTerm = document.getElementById('searchInput').value;
+      if (searchTerm) {
+        alert(`Buscando por: ${searchTerm}`);
+      }
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Visualizar Vagas - Banco de Talentos SENAI</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/visualizar-vagas.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="../FINDES SENAI BRANCO@300x (1).png" alt="SENAI">
+      <span>Banco de Talentos</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="visualizar-vagas.html">Vagas</a></li>
+      <li><a href="relatorios.html">Relatórios</a></li>
+      <li><a href="#">Configurações</a></li>
+    </ul>
+    <div class="user-menu">
+      <span>👤 Pedagogo</span>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <div class="page-header">
+    <h1>Banco de Talentos SENAI</h1>
+    <p>Visualizar Vagas</p>
+  </div>
+
+  <!-- Container Principal -->
+  <div class="container">
+    <!-- Filtros e Busca -->
+    <div class="search-section">
+      <div class="search-bar">
+        <input 
+          type="text" 
+          id="searchInput" 
+          placeholder="Buscar por título, empresa, ou requisitos..."
+          class="search-input"
+        >
+        <button class="btn btn-primary search-btn">Buscar</button>
+      </div>
+
+      <div class="filters-row">
+        <select id="filterEmpresa" class="filter-select">
+          <option value="">Empresa</option>
+          <option value="empresa-xyz">Empresa XYZ</option>
+          <option value="tech-solutions">Tech Solutions Ltd.</option>
+          <option value="metalurgica-silva">Metalúrgica Silva</option>
+          <option value="outra">Outra</option>
+        </select>
+
+        <select id="filterCurso" class="filter-select">
+          <option value="">Curso</option>
+          <option value="desenvolvimento-sistemas">Desenvolvimento de Sistemas</option>
+          <option value="tecnico-mecanica">Técnico em Mecânica</option>
+          <option value="tecnico-eletrotecnica">Técnico em Eletrotécnica</option>
+          <option value="administracao">Administração</option>
+        </select>
+
+        <select id="filterStatus" class="filter-select">
+          <option value="">Selecionar status...</option>
+          <option value="ativa">Ativa</option>
+          <option value="inativa">Inativa</option>
+          <option value="expirada">Expirada</option>
+        </select>
+
+        <button class="btn btn-secondary filter-btn">Filtrar</button>
+      </div>
+    </div>
+
+    <!-- Lista de Vagas -->
+    <div class="vagas-section">
+      <h2>Lista de Vagas Disponíveis</h2>
+
+      <div class="vagas-list">
+        <!-- Vaga Card 1 -->
+        <div class="vaga-card">
+          <div class="vaga-header">
+            <div class="vaga-title-section">
+              <h3>Assistente Técnico Industrial</h3>
+              <span class="status-badge ativa">Ativa</span>
+            </div>
+          </div>
+
+          <div class="vaga-info">
+            <div class="info-row">
+              <span class="info-label">Empresa:</span>
+              <span class="info-value">Empresa XYZ</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Curso:</span>
+              <span class="info-value">Técnico em Mecânica</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Expiração:</span>
+              <span class="info-value">Curso: 10/05/2024</span>
+            </div>
+          </div>
+
+          <p class="vaga-description">Descrição: Assistência técnica na área de manutenção e operação de máquinas e equipamentos industriais</p>
+
+          <div class="vaga-stats">
+            <span class="stat">👥 8 <small>Candidatos</small></span>
+            <span class="stat">✅ 8 <small>Compatíveis</small></span>
+          </div>
+
+          <a href="#" class="btn btn-primary">Ver Detalhes</a>
+        </div>
+
+        <!-- Vaga Card 2 -->
+        <div class="vaga-card">
+          <div class="vaga-header">
+            <div class="vaga-title-section">
+              <h3>Desenvolvedor de Software Jr</h3>
+              <span class="status-badge ativa">Ativa</span>
+            </div>
+          </div>
+
+          <div class="vaga-info">
+            <div class="info-row">
+              <span class="info-label">Empresa:</span>
+              <span class="info-value">Tech Solutions Ltd.</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Curso:</span>
+              <span class="info-value">Tecnologia da Informação</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Expiração:</span>
+              <span class="info-value">Curso: 15/05/2024</span>
+            </div>
+          </div>
+
+          <p class="vaga-description">Descrição: Desenvolvimento de softwares e aplicações web; conhecimento em linguagens de programação como Java, Python, JavaScript.</p>
+
+          <div class="vaga-stats">
+            <span class="stat">👥 10 <small>Candidatos</small></span>
+            <span class="stat">✅ 6 <small>Compatíveis</small></span>
+          </div>
+
+          <a href="#" class="btn btn-primary">Ver Detalhes</a>
+        </div>
+
+        <!-- Vaga Card 3 -->
+        <div class="vaga-card">
+          <div class="vaga-header">
+            <div class="vaga-title-section">
+              <h3>Técnico em Eletroeletrônica</h3>
+              <span class="status-badge ativa">Ativa</span>
+            </div>
+          </div>
+
+          <div class="vaga-info">
+            <div class="info-row">
+              <span class="info-label">Empresa:</span>
+              <span class="info-value">Metalúrgica Silva</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Curso:</span>
+              <span class="info-value">Técnico em Eletrotécnica</span>
+            </div>
+            <div class="info-row">
+              <span class="info-label">Expiração:</span>
+              <span class="info-value">Curso: 20/05/2024</span>
+            </div>
+          </div>
+
+          <p class="vaga-description">Descrição: Manutenção e instalação de sistemas eletroeletrônicos em indústrias.</p>
+
+          <div class="vaga-stats">
+            <span class="stat">👥 5 <small>Candidatos</small></span>
+            <span class="stat">✅ 5 <small>Compatíveis</small></span>
+          </div>
+
+          <a href="#" class="btn btn-primary">Ver Detalhes</a>
+        </div>
+      </div>
+
+      <!-- Paginação -->
+      <div class="pagination">
+        <span class="pagination-info">Mostrando 1 - 3 de 3 vagas</span>
+        <div class="pagination-links">
+          <span class="page-link active">1</span>
+          <span class="page-link">2</span>
+          <span class="page-link">3</span>
+          <span class="page-link">7</span>
+          <span class="page-link">Próximo</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.filter-btn').addEventListener('click', function() {
+      alert('Filtros aplicados!');
+    });
+
+    document.querySelector('.search-btn').addEventListener('click', function() {
+      const searchTerm = document.getElementById('searchInput').value;
+      if (searchTerm) {
+        alert(`Buscando por: ${searchTerm}`);
+      }
+    });
+
+    document.querySelectorAll('.btn-primary').forEach(btn => {
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        alert('Abrindo detalhes da vaga...');
+      });
+    });
+  </script>
+</body>
+</html>

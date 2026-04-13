@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil do Aluno - Banco de Talentos SENAI</title>
+  <link rel="stylesheet" href="../css/style.css">
+  <link rel="stylesheet" href="../css/perfil-aluno.css">
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="navbar-brand">
+      <img src="../FINDES SENAI BRANCO@300x (1).png" alt="SENAI">
+      <span>Banco de Talentos</span>
+    </div>
+    <ul>
+      <li><a href="index.html">Início</a></li>
+      <li><a href="visualizar-vagas.html">Vagas</a></li>
+      <li><a href="relatorios.html">Relatórios</a></li>
+      <li><a href="#">Configurações</a></li>
+    </ul>
+    <div class="user-menu">
+      <span>👤 Pedagogo</span>
+    </div>
+  </nav>
+
+  <!-- Header -->
+  <div class="page-header">
+    <h1>Banco de Talentos SENAI</h1>
+    <p>Perfil do Aluno</p>
+  </div>
+
+  <!-- Container Principal -->
+  <div class="container">
+    <div class="profile-content">
+      <!-- Coluna Esquerda - Avatar e Informações -->
+      <div class="profile-left">
+        <!-- Avatar -->
+        <div class="profile-avatar">
+          <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 400'%3E%3Cdefs%3E%3ClinearGradient id='bg' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ff9a56;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23ff7a00;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='400' fill='url(%23bg)'/%3E%3Ccircle cx='200' cy='120' r='60' fill='%23f5deb3'/%3E%3Cellipse cx='200' cy='280' rx='100' ry='120' fill='%234a90e2'/%3E%3C/svg%3E" alt="Avatar do Aluno">
+        </div>
+
+        <!-- Informações no Card -->
+        <div class="info-card">
+          <div class="info-header">
+            <h3>Informações Pessoais</h3>
+          </div>
+
+          <div class="info-group">
+            <label>Nome Completo:</label>
+            <p class="required-mark">*</p>
+            <input type="text" value="lucas.pereria@email.com" readonly class="info-input">
+          </div>
+
+          <div class="info-group">
+            <label>Contato:</label>
+            <input type="tel" value="+55 (11) 91234-5678" readonly class="info-input">
+          </div>
+
+          <div class="info-group">
+            <label>Curso Realizado:</label>
+            <input type="text" value="Técnico em Mechânica" readonly class="info-input">
+          </div>
+
+          <div class="form-buttons">
+            <button class="btn btn-primary">📝 Editar</button>
+            <button class="btn btn-secondary">🗑️ Excluir</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Coluna Direita - Detalhes e Candidaturas -->
+      <div class="profile-right">
+        <!-- Informações Pessoais Expandidas -->
+        <div class="info-section">
+          <h2>Informações Pessoais</h2>
+          
+          <div class="info-item">
+            <span class="info-label">Nome Completo:</span>
+            <span class="info-value">Lucas Pereira</span>
+          </div>
+
+          <div class="info-item">
+            <span class="info-label">E-mail:</span>
+            <span class="info-value">lucas.pereria@email.com</span>
+          </div>
+
+          <div class="info-item">
+            <span class="info-label">Contato:</span>
+            <span class="info-value">+55 (11) 91234-5678</span>
+          </div>
+
+          <div class="info-item">
+            <span class="info-label">Curso Realizado:</span>
+            <span class="info-value">Técnico em Mechânica</span>
+          </div>
+
+          <div class="info-item">
+            <span class="info-label">Ano de Conclusão:</span>
+            <span class="info-value">2020</span>
+          </div>
+
+          <div class="info-item">
+            <span class="info-label">Turma:</span>
+            <span class="info-value">A-101</span>
+          </div>
+
+          <div class="info-item">
+            <span class="info-label">Descrição:</span>
+            <span class="info-value">Técnico em Mechânica com experiência em manutenção industrial e operação de máquinas.</span>
+          </div>
+        </div>
+
+        <!-- Candidaturas Recentes -->
+        <div class="candidaturas-section">
+          <div class="candidaturas-header">
+            <h2>Candidaturas Recentes</h2>
+            <select id="filterStatus" class="filter-status">
+              <option value="">Filtrar por Status</option>
+              <option value="ativa">Ativa</option>
+              <option value="completa">Completa</option>
+              <option value="rejeitada">Rejeitada</option>
+            </select>
+            <span class="filter-label">Filtra de Vagas</span>
+            <select id="filterVagas" class="filter-vagas">
+              <option value="todas">Todas</option>
+              <option value="ativa">Ativas</option>
+              <option value="inativa">Inativas</option>
+            </select>
+          </div>
+
+          <div class="candidaturas-list">
+            <div class="candidatura-item">
+              <div class="candidatura-header">
+                <h3>Assistente Técnico Industrial</h3>
+                <span class="status-badge ativa">Ativa</span>
+              </div>
+              <p class="candidatura-empresa">Empresa XYZ</p>
+              <p class="candidatura-curso">Técnico em Mechânica</p>
+              <p class="candidatura-data">Candidatura do 23/04/2024</p>
+              <a href="#" class="btn btn-primary">Ver Detalhes</a>
+            </div>
+
+            <div class="candidatura-item">
+              <div class="candidatura-header">
+                <h3>Assistente Técnico Industrial</h3>
+                <span class="status-badge ativa">Ativa</span>
+              </div>
+              <p class="candidatura-empresa">Empresa XYZ</p>
+              <p class="candidatura-curso">Técnico em Mechânica</p>
+              <p class="candidatura-data">Candidatura do 23/04/2024</p>
+              <a href="#" class="btn btn-primary">Ver Detalhes</a>
+            </div>
+          </div>
+
+          <!-- Paginação -->
+          <div class="pagination-small">
+            <span class="page-link">1</span>
+            <span class="page-link">2</span>
+            <span class="page-link">3</span>
+            <span class="page-link">Próximo ></span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector('.btn-primary').addEventListener('click', function() {
+      alert('Abrindo formulário de edição...');
+    });
+
+    document.querySelector('.btn-secondary').addEventListener('click', function() {
+      if (confirm('Deseja excluir este aluno?')) {
+        alert('Aluno excluído com sucesso!');
+      }
+    });
+  </script>
+</body>
+</html>

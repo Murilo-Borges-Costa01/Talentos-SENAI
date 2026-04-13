@@ -15,10 +15,10 @@
       <span>Banco de Talentos</span>
     </div>
     <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="criar-vaga.html">Vagas</a></li>
+      <li><a href="dashboard.html">Início</a></li>
+      <li><a href="visualizar-vagas.html">Vagas</a></li>
       <li><a href="relatorios.html">Relatórios</a></li>
-      <li><a href="#">Configurações</a></li>
+      <li><a href="login.html" data-logout>Sair</a></li>
     </ul>
     <div class="user-menu">
       <span>👤 Pedagogo</span>
@@ -39,13 +39,13 @@
       <form id="formCriarVaga">
         <!-- Título da Vaga -->
         <div class="form-group">
-          <label for="titulVaga">
+          <label for="tituloVaga">
             Título da Vaga: <span class="required">*</span>
           </label>
           <input 
             type="text" 
-            id="titulVaga" 
-            name="titulVaga" 
+            id="tituloVaga" 
+            name="tituloVaga" 
             placeholder="Digite o título da vaga"
             required
           >
@@ -91,6 +91,7 @@
             type="date" 
             id="dataExpiracao" 
             name="dataExpiracao"
+            required
           >
         </div>
 
@@ -117,32 +118,10 @@
           <button type="reset" class="btn btn-secondary">Cancelar</button>
         </div>
       </form>
+      <p id="vagaMessage" class="form-message" hidden></p>
     </div>
   </div>
 
-  <script>
-    // Contador de caracteres - Descrição
-    const descricaoVaga = document.getElementById('descricaoVaga');
-    const charCountDescricao = document.getElementById('charCountDescricao');
-
-    descricaoVaga.addEventListener('input', function() {
-      charCountDescricao.textContent = this.value.length;
-    });
-
-    // Contador de caracteres - Requisitos
-    const requisitos = document.getElementById('requisitos');
-    const charCountRequisitos = document.getElementById('charCountRequisitos');
-
-    requisitos.addEventListener('input', function() {
-      charCountRequisitos.textContent = this.value.length;
-    });
-
-    // Submissão do formulário
-    document.getElementById('formCriarVaga').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Vaga criada com sucesso!');
-      // Aqui você faria a requisição para o backend
-    });
-  </script>
+  <script src="../js/app.js"></script>
 </body>
 </html>

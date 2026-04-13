@@ -15,10 +15,10 @@
       <span>Banco de Talentos</span>
     </div>
     <ul>
-      <li><a href="index.html">Início</a></li>
+      <li><a href="dashboard.html">Início</a></li>
       <li><a href="visualizar-vagas.html">Vagas</a></li>
       <li><a href="relatorios.html">Relatórios</a></li>
-      <li><a href="#">Configurações</a></li>
+      <li><a href="login.html" data-logout>Sair</a></li>
     </ul>
     <div class="user-menu">
       <span>👤 Pedagogo</span>
@@ -50,17 +50,17 @@
           <div class="info-group">
             <label>Nome Completo:</label>
             <p class="required-mark">*</p>
-            <input type="text" value="lucas.pereria@email.com" readonly class="info-input">
+            <input id="profileNomeResumido" type="text" value="Lucas Pereira" readonly class="info-input">
           </div>
 
           <div class="info-group">
             <label>Contato:</label>
-            <input type="tel" value="+55 (11) 91234-5678" readonly class="info-input">
+            <input id="profileContatoResumido" type="tel" value="+55 (11) 91234-5678" readonly class="info-input">
           </div>
 
           <div class="info-group">
             <label>Curso Realizado:</label>
-            <input type="text" value="Técnico em Mechânica" readonly class="info-input">
+            <input id="profileCursoResumido" type="text" value="Técnico em Mecânica" readonly class="info-input">
           </div>
 
           <div class="form-buttons">
@@ -78,37 +78,37 @@
           
           <div class="info-item">
             <span class="info-label">Nome Completo:</span>
-            <span class="info-value">Lucas Pereira</span>
+            <span id="profileNome" class="info-value">Lucas Pereira</span>
           </div>
 
           <div class="info-item">
             <span class="info-label">E-mail:</span>
-            <span class="info-value">lucas.pereria@email.com</span>
+            <span id="profileEmail" class="info-value">lucas.pereira@email.com</span>
           </div>
 
           <div class="info-item">
             <span class="info-label">Contato:</span>
-            <span class="info-value">+55 (11) 91234-5678</span>
+            <span id="profileContato" class="info-value">+55 (11) 91234-5678</span>
           </div>
 
           <div class="info-item">
             <span class="info-label">Curso Realizado:</span>
-            <span class="info-value">Técnico em Mechânica</span>
+            <span id="profileCurso" class="info-value">Técnico em Mecânica</span>
           </div>
 
           <div class="info-item">
             <span class="info-label">Ano de Conclusão:</span>
-            <span class="info-value">2020</span>
+            <span id="profileAno" class="info-value">2020</span>
           </div>
 
           <div class="info-item">
             <span class="info-label">Turma:</span>
-            <span class="info-value">A-101</span>
+            <span id="profileTurma" class="info-value">A-101</span>
           </div>
 
           <div class="info-item">
             <span class="info-label">Descrição:</span>
-            <span class="info-value">Técnico em Mechânica com experiência em manutenção industrial e operação de máquinas.</span>
+            <span id="profileDescricao" class="info-value">Técnico em Mecânica com experiência em manutenção industrial e operação de máquinas.</span>
           </div>
         </div>
 
@@ -166,16 +166,6 @@
     </div>
   </div>
 
-  <script>
-    document.querySelector('.btn-primary').addEventListener('click', function() {
-      alert('Abrindo formulário de edição...');
-    });
-
-    document.querySelector('.btn-secondary').addEventListener('click', function() {
-      if (confirm('Deseja excluir este aluno?')) {
-        alert('Aluno excluído com sucesso!');
-      }
-    });
-  </script>
+  <script src="../js/app.js"></script>
 </body>
 </html>

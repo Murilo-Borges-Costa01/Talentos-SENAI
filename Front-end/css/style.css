@@ -45,6 +45,25 @@ body {
   transform: translateY(-2px);
 }
 
+.form-message {
+  margin-top: 1rem;
+  padding: 0.75rem 1rem;
+  border-radius: 6px;
+  font-size: 0.95rem;
+}
+
+.form-message.success {
+  background-color: #e8f7ec;
+  color: #1f7a37;
+  border: 1px solid #b7e2c1;
+}
+
+.form-message.error {
+  background-color: #fdebec;
+  color: #b4232d;
+  border: 1px solid #f3b8bc;
+}
+
 /* Status Badges */
 .badge {
   display: inline-block;

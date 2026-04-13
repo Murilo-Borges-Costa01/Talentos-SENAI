@@ -15,10 +15,10 @@
       <span>Banco de Talentos</span>
     </div>
     <ul>
-      <li><a href="index.html">Início</a></li>
+      <li><a href="dashboard.html">Início</a></li>
       <li><a href="visualizar-vagas.html">Vagas</a></li>
       <li><a href="relatorios.html">Relatórios</a></li>
-      <li><a href="#">Configurações</a></li>
+      <li><a href="login.html" data-logout>Sair</a></li>
     </ul>
     <div class="user-menu">
       <span>👤 Pedagogo</span>
@@ -90,71 +90,7 @@
               <th>Ações</th>
             </tr>
           </thead>
-          <tbody>
-            <tr>
-              <td><a href="perfil-aluno.html" class="link-nome">Lucas Pereira</a></td>
-              <td>lucas.pereria@email.com</td>
-              <td>Técnico em Mecânica</td>
-              <td>A-101</td>
-              <td>2020</td>
-              <td class="acoes">
-                <a href="perfil-aluno.html" class="btn-icon edit" title="Editar">
-                  ✏️ Editar
-                </a>
-                <button class="btn-icon delete" title="Excluir" onclick="confirmDelete('Lucas Pereira')">
-                  ❌ Excluir
-                </button>
-              </td>
-            </tr>
-
-            <tr>
-              <td><a href="perfil-aluno.html" class="link-nome">Mariana Souza</a></td>
-              <td>mariana.souza@email.com</td>
-              <td>Técnico em Eletotécnica</td>
-              <td>B-202</td>
-              <td>2019</td>
-              <td class="acoes">
-                <a href="perfil-aluno.html" class="btn-icon edit" title="Editar">
-                  ✏️ Editar
-                </a>
-                <button class="btn-icon delete" title="Excluir" onclick="confirmDelete('Mariana Souza')">
-                  ❌ Excluir
-                </button>
-              </td>
-            </tr>
-
-            <tr>
-              <td><a href="perfil-aluno.html" class="link-nome">Pedro Lima</a></td>
-              <td>pedro.lima@email.com</td>
-              <td>Texnologia da Informática</td>
-              <td>C-303</td>
-              <td>2021</td>
-              <td class="acoes">
-                <a href="perfil-aluno.html" class="btn-icon edit" title="Editar">
-                  ✏️ Editar
-                </a>
-                <button class="btn-icon delete" title="Excluir" onclick="confirmDelete('Pedro Lima')">
-                  ❌ Excluir
-                </button>
-              </td>
-            </tr>
-
-            <tr>
-              <td><a href="perfil-aluno.html" class="link-nome">Ana Oliveira</a></td>
-              <td>ana.oliveira@email.com</td>
-              <td>Técnico em Mecânica</td>
-              <td>D-404</td>
-              <td>2020</td>
-              <td class="acoes">
-                <a href="perfil-aluno.html" class="btn-icon edit" title="Editar">
-                  ✏️ Editar
-                </a>
-                <button class="btn-icon delete" title="Excluir" onclick="confirmDelete('Ana Oliveira')">
-                  ❌ Excluir
-                </button>
-              </td>
-            </tr>
-          </tbody>
+          <tbody id="alunosTableBody"></tbody>
         </table>
       </div>
 
@@ -172,23 +108,6 @@
     </div>
   </div>
 
-  <script>
-    function confirmDelete(name) {
-      if (confirm(`Deseja excluir ${name}?`)) {
-        alert(`${name} foi excluído com sucesso!`);
-      }
-    }
-
-    document.querySelector('.filter-btn').addEventListener('click', function() {
-      alert('Filtros aplicados!');
-    });
-
-    document.querySelector('.search-btn').addEventListener('click', function() {
-      const searchTerm = document.getElementById('searchInput').value;
-      if (searchTerm) {
-        alert(`Buscando por: ${searchTerm}`);
-      }
-    });
-  </script>
+  <script src="../js/app.js"></script>
 </body>
 </html>

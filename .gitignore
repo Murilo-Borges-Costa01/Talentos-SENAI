@@ -1,3 +1,30 @@
 node_modules/
 .env
 npm-debug.log*
+
+# Logs
+logs/
+*.log
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Runtime files
+*.pid
+*.seed
+*.pid.lock
+
+# Coverage and build output
+coverage/
+dist/
+build/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE and editor files
+.vscode/
+.idea/
+*.swp
+*.swo

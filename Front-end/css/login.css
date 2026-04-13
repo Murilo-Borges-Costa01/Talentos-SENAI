@@ -42,7 +42,11 @@ body {
 .login-subtitle {
   font-size: 0.9rem;
   color: #666;
-  margin-bottom: 2rem;
+  margin-bottom: 1.25rem;
+}
+
+.auth-panel {
+  text-align: left;
 }
 
 .form-group {
@@ -59,7 +63,8 @@ body {
 }
 
 .form-group input[type="email"],
-.form-group input[type="password"] {
+.form-group input[type="password"],
+.form-group input[type="text"] {
   width: 100%;
   padding: 0.75rem;
   border: 1px solid #ddd;
@@ -69,7 +74,8 @@ body {
 }
 
 .form-group input[type="email"]:focus,
-.form-group input[type="password"]:focus {
+.form-group input[type="password"]:focus,
+.form-group input[type="text"]:focus {
   outline: none;
   border-color: #0052cc;
   box-shadow: 0 0 0 3px rgba(0, 82, 204, 0.1);
@@ -114,6 +120,50 @@ body {
   transform: translateY(-2px);
 }
 
+.form-message {
+  margin-top: 1rem;
+}
+
+.auth-actions {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-top: 1rem;
+}
+
+.auth-action-btn {
+  border: 1px solid #c8d2e2;
+  border-radius: 999px;
+  background-color: #f8faff;
+  color: #204a85;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.45rem 0.85rem;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.auth-action-btn:hover,
+.auth-action-btn.active {
+  border-color: #0052cc;
+  color: #0052cc;
+  background-color: #eef4ff;
+}
+
+.auth-back {
+  margin-top: 0.75rem;
+  border: none;
+  background: transparent;
+  color: #355079;
+  text-decoration: underline;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.auth-back:hover {
+  color: #003d99;
+}
+
 /* Responsivo */
 @media (max-width: 480px) {
   .login-container {
@@ -130,5 +180,9 @@ body {
 
   .btn {
     width: 100%;
+  }
+
+  .auth-actions {
+    justify-content: space-between;
   }
 }

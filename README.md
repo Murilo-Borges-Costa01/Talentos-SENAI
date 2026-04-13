@@ -1,6 +1,20 @@
-# Banco de Talentos SENAI - Backend
+# Banco de Talentos SENAI
 
-API RESTful em Node.js + Express + MySQL usando Sequelize com arquitetura MVC.
+Aplicação web para gestão de alunos, vagas, candidaturas e relatórios.
+
+- Backend: Node.js, Express, Sequelize e MySQL.
+- Frontend: páginas HTML/CSS/JS servidas pelo próprio backend.
+
+## Visão Geral
+
+O sistema possui autenticação JWT e operações de CRUD para as entidades principais:
+
+- Alunos
+- Vagas
+- Candidaturas
+- Relatórios de alunos/candidatos/compatibilidade
+
+O backend expõe a API REST e também serve os arquivos estáticos do frontend.
 
 ## Stack
 
@@ -16,6 +30,12 @@ API RESTful em Node.js + Express + MySQL usando Sequelize com arquitetura MVC.
 ## Estrutura do Projeto
 
 ```txt
+Front-end/
+  css/
+  html/
+  js/
+scripts/
+  setup-db.js
 src/
   app.js
   server.js
@@ -58,30 +78,54 @@ src/
     vagaStatus.js
 ```
 
+## Pré-requisitos
+
+- Node.js 18+
+- MySQL 8+
+
 ## Configuração
 
 1. Copie `.env.example` para `.env`.
-2. Ajuste as credenciais do MySQL e JWT.
-3. Para atualizar estrutura das tabelas automaticamente em desenvolvimento, mantenha `DB_SYNC_ALTER=true`.
-4. Instale dependências:
+2. Ajuste as credenciais do MySQL e JWT no `.env`.
+3. Instale dependências:
 
 ```bash
 npm install
 ```
 
-5. Crie/verifique o banco automaticamente:
+4. Crie/verifique o banco:
 
 ```bash
 npm run db:setup
 ```
 
-6. Rode em desenvolvimento:
+5. Execute em desenvolvimento:
 
 ```bash
 npm run dev
 ```
 
-A API criará as tabelas automaticamente via `sequelize.sync()`.
+6. Execute em produção local:
+
+```bash
+npm run start
+```
+
+## Scripts
+
+- `npm run dev`: sobe o servidor com `nodemon`.
+- `npm run start`: sobe o servidor com Node.
+- `npm run db:setup`: cria/verifica o banco no MySQL.
+
+## Acesso à Aplicação
+
+- URL local: `http://localhost:3000`
+- Health check: `GET /health`
+
+Com `AUTO_SEED_ADMIN=true`, o usuário admin é criado automaticamente (se não existir):
+
+- Email: `pedagogo@senai.com`
+- Senha: `123456`
 
 ## Autenticação
 
@@ -166,7 +210,7 @@ Filtros:
 }
 ```
 
-### Criar Aluno Externo (sem curso/ano/turma)
+### Criar Aluno Externo
 
 ```json
 {
@@ -199,7 +243,7 @@ Filtros:
 }
 ```
 
-## Regras Implementadas
+## Regras de Negócio Implementadas
 
 - Email de aluno e usuário é único.
 - Para aluno `senai`, curso/ano_conclusao/turma são obrigatórios.
@@ -209,6 +253,33 @@ Filtros:
 - Vagas expiradas são atualizadas automaticamente para `expirada`.
 - Vagas padrão de listagem retornam apenas `ativas`.
 - Senhas armazenadas com hash (`bcryptjs`).
-- ORM Sequelize evita SQL Injection por query parametrizada.
+- ORM Sequelize evita SQL injection com queries parametrizadas.
 - Middleware global de erro e auditoria básica de ações.
 - Paginação e ordenação nas listagens principais.
+
+## Solução de Problemas
+
+### Erro de conexão MySQL (`Access denied for user ...`)
+
+Verifique no `.env`:
+
+- `DB_HOST`
+- `DB_PORT`
+- `DB_USER`
+- `DB_PASSWORD`
+- `DB_NAME`
+
+Depois execute novamente:
+
+```bash
+npm run db:setup
+npm run start
+```
+
+### Porta em uso
+
+Altere `PORT` no `.env` para uma porta livre.
+
+## Licença
+
+Projeto acadêmico/educacional.

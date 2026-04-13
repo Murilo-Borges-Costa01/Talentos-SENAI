@@ -15,10 +15,10 @@
       <span>Banco de Talentos</span>
     </div>
     <ul>
-      <li><a href="index.html">Início</a></li>
-      <li><a href="criar-vaga.html">Vagas</a></li>
+      <li><a href="dashboard.html">Início</a></li>
+      <li><a href="visualizar-vagas.html">Vagas</a></li>
       <li><a href="relatorios.html">Relatórios</a></li>
-      <li><a href="#">Configurações</a></li>
+      <li><a href="login.html" data-logout>Sair</a></li>
     </ul>
     <div class="user-menu">
       <span>👤 Pedagogo</span>
@@ -68,13 +68,14 @@
         <!-- Contato -->
         <div class="form-group">
           <label for="contato">
-            Contato (Telefone/WhatsApp):
+            Contato (Telefone/WhatsApp): <span class="required">*</span>
           </label>
           <input 
             type="tel" 
             id="contato" 
             name="contato" 
             placeholder="(XX) XXXXX-XXXX"
+            required
           >
         </div>
 
@@ -100,10 +101,12 @@
               Ano de Conclusão: <span class="required">*</span>
             </label>
             <input 
-              type="text" 
+              type="number" 
               id="anoConclusao" 
               name="anoConclusao" 
               placeholder="YYYY"
+              min="1900"
+              max="3000"
               required
             >
           </div>
@@ -112,13 +115,14 @@
         <!-- Turma -->
         <div class="form-group">
           <label for="turma">
-            Turma:
+            Turma: <span class="required">*</span>
           </label>
           <input 
             type="text" 
             id="turma" 
             name="turma" 
             placeholder="Digite a turma"
+            required
           >
         </div>
 
@@ -144,24 +148,10 @@
           <button type="reset" class="btn btn-secondary">Cancelar</button>
         </div>
       </form>
+      <p id="alunoMessage" class="form-message" hidden></p>
     </div>
   </div>
 
-  <script>
-    // Contador de caracteres
-    const descricao = document.getElementById('descricao');
-    const charCount = document.getElementById('charCount');
-
-    descricao.addEventListener('input', function() {
-      charCount.textContent = this.value.length;
-    });
-
-    // Submissão do formulário
-    document.getElementById('formCadastroAluno').addEventListener('submit', function(e) {
-      e.preventDefault();
-      alert('Aluno cadastrado com sucesso!');
-      // Aqui você faria a requisição para o backend
-    });
-  </script>
+  <script src="../js/app.js"></script>
 </body>
 </html>

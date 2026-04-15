@@ -187,6 +187,25 @@
   grid-template-columns: 1fr;
 }
 
+.radio-group {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.radio-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #333;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+.radio-option input[type="radio"] {
+  accent-color: #0052cc;
+}
+
 /* Buttons */
 .form-buttons {
   display: flex;

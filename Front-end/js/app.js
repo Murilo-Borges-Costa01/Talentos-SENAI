@@ -346,6 +346,40 @@
 
     const message = document.getElementById('alunoMessage');
     const submitButton = form.querySelector('button[type="submit"]');
+    const secaoSenaiCampos = document.getElementById('secaoSenaiCampos');
+    const radiosFoiAlunoSenai = form.querySelectorAll('input[name="foiAlunoSenai"]');
+    const cursoInput = document.getElementById('curso');
+    const anoConclusaoInput = document.getElementById('anoConclusao');
+    const turmaInput = document.getElementById('turma');
+
+    function getFoiAlunoSenaiValue() {
+      const checked = form.querySelector('input[name="foiAlunoSenai"]:checked');
+      return checked ? checked.value : '';
+    }
+
+    function toggleSenaiFields(isSenai) {
+      if (!secaoSenaiCampos) return;
+
+      secaoSenaiCampos.hidden = !isSenai;
+
+      if (cursoInput) cursoInput.required = isSenai;
+      if (anoConclusaoInput) anoConclusaoInput.required = isSenai;
+      if (turmaInput) turmaInput.required = isSenai;
+
+      if (!isSenai) {
+        if (cursoInput) cursoInput.value = '';
+        if (anoConclusaoInput) anoConclusaoInput.value = '';
+        if (turmaInput) turmaInput.value = '';
+      }
+    }
+
+    radiosFoiAlunoSenai.forEach((radio) => {
+      radio.addEventListener('change', () => {
+        toggleSenaiFields(getFoiAlunoSenaiValue() === 'sim');
+      });
+    });
+
+    toggleSenaiFields(getFoiAlunoSenaiValue() === 'sim');
 
     form.addEventListener('submit', async (event) => {
       event.preventDefault();
@@ -353,14 +387,23 @@
       setButtonState(submitButton, true, 'Salvando...');
 
       try {
+        const foiAlunoSenai = getFoiAlunoSenaiValue();
+
+        if (!foiAlunoSenai) {
+          showMessage(message, 'Informe se o candidato já foi aluno SENAI.');
+          return;
+        }
+
+        const isAlunoSenai = foiAlunoSenai === 'sim';
+
         const payload = {
-          tipo_aluno: 'senai',
+          tipo_aluno: isAlunoSenai ? 'senai' : 'externo',
           nome: document.getElementById('nomeCompleto').value.trim(),
           email: document.getElementById('email').value.trim(),
           contato: document.getElementById('contato').value.trim(),
-          curso: document.getElementById('curso').value.trim(),
-          ano_conclusao: Number(document.getElementById('anoConclusao').value),
-          turma: document.getElementById('turma').value.trim(),
+          curso: isAlunoSenai ? document.getElementById('curso').value.trim() : null,
+          ano_conclusao: isAlunoSenai ? Number(document.getElementById('anoConclusao').value) : null,
+          turma: isAlunoSenai ? document.getElementById('turma').value.trim() : null,
           descricao: document.getElementById('descricao').value.trim(),
         };
 
@@ -371,12 +414,20 @@
 
         form.reset();
         document.getElementById('charCount').textContent = '0';
+        toggleSenaiFields(false);
         showMessage(message, `Aluno ${data.nome} cadastrado com sucesso.`, 'success');
       } catch (error) {
         showMessage(message, error.message || 'Falha ao cadastrar aluno.');
       } finally {
         setButtonState(submitButton, false);
       }
+    });
+
+    form.addEventListener('reset', () => {
+      window.setTimeout(() => {
+        document.getElementById('charCount').textContent = '0';
+        toggleSenaiFields(false);
+      }, 0);
     });
 
     const descricao = document.getElementById('descricao');
